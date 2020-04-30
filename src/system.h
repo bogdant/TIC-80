@@ -22,7 +22,7 @@
 #define TIC_NAME_FULL TIC_NAME " tiny computer"
 #define TIC_TITLE TIC_NAME_FULL " " TIC_VERSION_LABEL
 #define TIC_HTTP "http://"
-#define TIC_HOST "tic80.com"
+#define TIC_HOST "kyteup.com"
 #define TIC_WEBSITE TIC_HTTP TIC_HOST
 #define TIC_YEAR "2020"
 #define TIC_COPYRIGHT TIC_WEBSITE " (C) " TIC_YEAR

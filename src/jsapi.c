@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 #include "machine.h"
+#include "studio.h"
 
 #if defined(TIC_BUILD_WITH_JS)
 
@@ -540,7 +541,17 @@ static duk_ret_t duk_pmem(duk_context* duk)
         duk_push_int(duk, val);
 
         return 1;
-    }
+	}
+	else if (index == TIC_PERSISTENT_SIZE) 
+	{	
+		s32 size = 0;
+		const char* data = getSystem()->httpGetSync("/getdata", &size);
+		char* state = malloc(size + 1);
+		strncpy(state, data, size);
+		state[size] = '\0';
+		duk_push_string(duk, state);
+		return 1;
+	}
     else return duk_error(duk, DUK_ERR_ERROR, "invalid persistent tic index\n");
 
     return 0;

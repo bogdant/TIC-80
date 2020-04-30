@@ -325,6 +325,7 @@ target_include_directories(tic80core
         ${THIRDPARTY_DIR}/moonscript
         ${THIRDPARTY_DIR}/fennel
     PUBLIC
+		${CMAKE_CURRENT_BINARY_DIR}
         ${CMAKE_SOURCE_DIR}/include)
 
 target_link_libraries(tic80core lua lpeg wren squirrel giflib blipbuf duktape)
